@@ -3,16 +3,19 @@ class Player():
         self.name = given_name
         self.health = 100
         self.energy = 100
-        self.inventory_max_weight = 50
+        self.inventory_limit = 50
         self.inventory = []
+        self.balance = 10
         # add more atributes as needed
 
     def calculate_inventory_size(self):
-        # write code here
-        pass
+        x = 0
+        for counter in self.inventory:
+            x += counter
+        return x
 
     def add_item(self, item_instance):
-        if self.calculate_inventory_size() > self.inventory_max_weight:
+        if self.calculate_inventory_size() > self.inventory_limit:
             self.inventory.append(item_instance)
         else:
             print("Your inventory is full...")
