@@ -13,12 +13,13 @@ class Player():
         for counter in self.inventory:
             x += counter
         return x
-
+    
     def add_item(self, item_instance):
-        if self.calculate_inventory_size() > self.inventory_limit:
+        if self.calculate_inventory_size() < self.inventory_limit:
             self.inventory.append(item_instance)
+            print("\n"f"{item_instance.name} has been added to your inventory.")
         else:
-            print("Your inventory is full...")
+            print("\nYour inventory is full!")
 
     def use_item(self, item_instance):
         if item_instance.type == "food":
