@@ -60,7 +60,8 @@ class Game():
         # Items
         hammer = Item('Hammer', "tool")
         pen = Item('Pen', "tool")
-        key = Item('Key', "key")
+        key_bedroom = Item('Key', "key")
+        key_masterbedroom = Item('Key', "key")
         apple = Item('Apple', "food")
 
         home.add_item(hammer)
