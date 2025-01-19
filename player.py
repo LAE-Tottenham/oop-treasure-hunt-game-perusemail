@@ -8,18 +8,16 @@ class Player():
         self.balance = 10
         # add more atributes as needed
 
-    def calculate_inventory_size(self):
-        x = 0
-        for counter in self.inventory:
-            x += counter
-        return x
-    
-    def add_item(self, item_instance):
+    def add_item(self, item):
         if self.calculate_inventory_size() < self.inventory_limit:
-            self.inventory.append(item_instance)
-            print("\n"f"{item_instance.name} has been added to your inventory.")
+            self.inventory.append(item)
+            print(f"{item.name} has been added to your inventory.")
         else:
-            print("\nYour inventory is full!")
+            print("Your inventory is full! You can't add more items.")
+    
+    def calculate_inventory_size(self):
+        # Instead of adding up items, return the length of the inventory list
+        return len(self.inventory)
 
     def use_item(self, item_instance):
         if item_instance.type == "food":
